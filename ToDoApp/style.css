@@ -1,0 +1,90 @@
+
+/* Remove default margin and padding from all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center the Todo App on the page */
+body{
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main card container */
+.container{
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* App heading */
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input and button section */
+.input-section{
+    display: flex;
+    gap: 10px;
+}
+
+/* Task input field */
+input{
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Input field focus effect */
+input:focus{
+    border-color: #4CAF50;
+}
+
+/* General button styling */
+button{
+    padding: 10px 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover{
+    opacity: 0.9;
+}
+
+/* Task list */
+ul{
+    margin-top: 20px;
+    list-style: none;
+}
+
+/* Individual task item */
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+/* Delete button styling */
+.delete{
+    background-color: #e74c3c;
+}
+
