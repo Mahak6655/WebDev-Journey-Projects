@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🐱 Random Cat Explorer</h1>
+        <p>Click the button to get a random cat image and an interesting fact.</p>
+
+        <!-- Cat Image -->
+        <img id="catImage"
+             src="https://placehold.co/600x400?text=Click+Generate"
+             alt="Cat Image">
+
+        <!-- Cat Fact -->
+        <div class="fact-box">
+            <h2>Cat Fact</h2>
+            <p id="fact">Click the button below!</p>
+        </div>
+
+        <!-- Button -->
+        <button id="btn">Generate Cat</button>
+
+    </div>
+
+    <!-- Axios Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Your JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
