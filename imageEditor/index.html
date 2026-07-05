@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PixelCraft - Browser Image Editor</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main>
+
+<section>
+
+    <!-- ================= LEFT PANEL ================= -->
+
+    <div class="left">
+
+        <div class="top">
+
+            <label for="image-input" class="btn">
+                <i class="ri-image-add-line"></i>
+                Choose Image
+            </label>
+
+            <input
+                type="file"
+                id="image-input"
+                accept="image/*"
+                hidden
+            >
+
+            <button class="btn" id="reset-btn">
+                <i class="ri-refresh-line"></i>
+                Reset
+            </button>
+
+            <button class="btn" id="download-btn">
+                <i class="ri-download-2-line"></i>
+                Download
+            </button>
+
+        </div>
+
+        <div class="bottom">
+
+            <div class="placeholder">
+
+                <i class="ri-image-line"></i>
+
+                <h2>Choose an Image</h2>
+
+                <p>
+                    PNG, JPG, JPEG, WEBP
+                </p>
+
+            </div>
+
+            <canvas id="image-canvas"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- ================= RIGHT PANEL ================= -->
+
+    <div class="right">
+
+        <h2>
+            <i class="ri-equalizer-3-line"></i>
+            Filters
+        </h2>
+
+        <div class="filter-group">
+
+            <div class="group">
+
+                <h3>
+                    <i class="ri-sun-line"></i>
+                    Basic
+                </h3>
+
+                <div class="filters basic-filters"></div>
+
+            </div>
+
+            <div class="group">
+
+                <h3>
+                    <i class="ri-palette-line"></i>
+                    Color
+                </h3>
+
+                <div class="filters color-filters"></div>
+
+            </div>
+
+            <div class="group">
+
+                <h3>
+                    <i class="ri-blur-off-line"></i>
+                    Effects
+                </h3>
+
+                <div class="filters effect-filters"></div>
+
+            </div>
+
+        </div>
+
+        <h2>
+            <i class="ri-magic-line"></i>
+            Presets
+        </h2>
+
+        <div class="presets"></div>
+
+    </div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

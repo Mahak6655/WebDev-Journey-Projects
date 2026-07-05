@@ -1,0 +1,464 @@
+/* ===========================
+        GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg-primary-color);
+    color:var(--text-primary-color);
+}
+
+main{
+    width:100%;
+    height:100vh;
+    padding:16px;
+}
+
+main section{
+    width:100%;
+    height:100%;
+    display:flex;
+    gap:18px;
+}
+
+/* ===========================
+        LEFT PANEL
+=========================== */
+
+.left{
+    width:72%;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* ===========================
+        TOP BAR
+=========================== */
+
+.top{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-width:170px;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+
+    border:none;
+    outline:none;
+    border-radius:12px;
+
+    background:var(--bg-active-color);
+    color:var(--text-active-color);
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.btn i{
+    font-size:18px;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.30);
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+#reset-btn{
+    background:var(--bg-danger-color);
+    color:white;
+}
+
+#download-btn{
+    background:var(--bg-success-color);
+    color:white;
+}
+
+/* ===========================
+        IMAGE AREA
+=========================== */
+
+.bottom{
+
+    flex:1;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:var(--bg-secondary-color);
+
+    border:1px solid rgba(255,255,255,.05);
+}
+
+/* Checker Background */
+
+.bottom::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+
+    background-size:28px 28px;
+}
+
+.placeholder{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:15px;
+
+    color:var(--text-secondary-color);
+
+    opacity:.55;
+
+    z-index:2;
+}
+
+.placeholder i{
+
+    font-size:8rem;
+
+}
+
+.placeholder h2{
+
+    font-size:28px;
+    font-weight:600;
+
+}
+
+.placeholder p{
+
+    font-size:15px;
+
+}
+
+canvas{
+
+    display:none;
+
+    max-width:95%;
+    max-height:94%;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    z-index:5;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+}
+/* ===========================
+        RIGHT PANEL
+=========================== */
+
+.right{
+    width:28%;
+    background:var(--bg-secondary-color);
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    overflow-y:auto;
+}
+
+.right::-webkit-scrollbar{
+    width:6px;
+}
+
+.right::-webkit-scrollbar-thumb{
+    background:#555;
+    border-radius:20px;
+}
+
+.right h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:600;
+    color:var(--text-primary-color);
+}
+
+.right h2 i{
+    color:var(--text-secondary-color);
+}
+
+/* ===========================
+        FILTER GROUP
+=========================== */
+
+.filter-group{
+    flex:1;
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+.filter-group::-webkit-scrollbar{
+    width:6px;
+}
+
+.filter-group::-webkit-scrollbar-thumb{
+    background:#555;
+    border-radius:20px;
+}
+
+.group{
+    margin-bottom:22px;
+}
+
+.group h3{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:600;
+    color:var(--text-secondary-color);
+    padding-bottom:8px;
+    margin-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.filters{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* ===========================
+        FILTER CARD
+=========================== */
+
+.filter{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:10px;
+    padding:10px 12px;
+    transition:.25s;
+}
+
+.filter:hover{
+    background:rgba(255,255,255,.06);
+    border-color:rgba(255,255,255,.12);
+}
+
+.filter p{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    font-size:14px;
+    text-transform:capitalize;
+}
+
+.filter input{
+    width:100%;
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+/* Chrome */
+
+.filter input::-webkit-slider-runnable-track{
+    height:4px;
+    background:#666;
+    border-radius:20px;
+}
+
+.filter input::-webkit-slider-thumb{
+    appearance:none;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:white;
+    margin-top:-5px;
+    transition:.2s;
+}
+
+.filter input::-webkit-slider-thumb:hover{
+    transform:scale(1.15);
+}
+
+/* Firefox */
+
+.filter input::-moz-range-track{
+    height:4px;
+    background:#666;
+}
+
+.filter input::-moz-range-thumb{
+    width:15px;
+    height:15px;
+    border:none;
+    border-radius:50%;
+    background:white;
+}
+
+/* ===========================
+        PRESETS
+=========================== */
+
+.presets{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+
+    max-height:220px;   /* Change this value if needed */
+    overflow-y:auto;
+
+    padding-right:5px;
+}
+.presets::-webkit-scrollbar{
+    width:6px;
+}
+
+.presets::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.presets::-webkit-scrollbar-thumb{
+    background:#555;
+    border-radius:20px;
+}
+
+.presets::-webkit-scrollbar-thumb:hover{
+    background:#777;
+}
+
+.presets button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#3b3b3b;
+    color:white;
+    cursor:pointer;
+    transition:.25s;
+    font-size:13px;
+    font-weight:600;
+}
+
+.presets button:hover{
+    background:var(--bg-active-color);
+    color:var(--text-active-color);
+}
+
+.presets button.active{
+    background:white;
+    color:black;
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+    .left{
+        width:68%;
+    }
+
+    .right{
+        width:32%;
+    }
+
+}
+
+@media(max-width:1000px){
+
+    body{
+        overflow:auto;
+    }
+
+    main{
+        height:auto;
+        padding:15px;
+    }
+
+    main section{
+
+        flex-direction:column;
+
+        height:auto;
+
+    }
+
+    .left,
+    .right{
+
+        width:100%;
+
+    }
+
+    .bottom{
+
+        min-height:60vh;
+
+    }
+
+    .top{
+
+        flex-wrap:wrap;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        max-width:220px;
+
+    }
+
+}
